@@ -28,4 +28,7 @@ module.exports = {
       template: "./src/index.pug",
     }),
   ],
+  devServer: {
+    host: "192.168.100.136",
+  },
 };
