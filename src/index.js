@@ -1,8 +1,26 @@
 import "./style.scss";
-import { Scene } from "three";
 const THREE = require("three");
 
 let scene, camera, renderer, starGeo, stars;
+let navBar = document.querySelector("#NavBar");
+let homeSection = document.querySelector("#Home");
+
+let mobileWidth = window.innerWidth < 768;
+
+if (mobileWidth) alert("hello");
+
+window.onload = () => {
+  init();
+  let initialNavBarOffset = navBar.offsetTop;
+
+  window.onscroll = () => {
+    if (window.pageYOffset >= initialNavBarOffset) {
+      navBar.classList.add("sticky");
+    } else {
+      navBar.classList.remove("sticky");
+    }
+  };
+};
 
 function init() {
   scene = new THREE.Scene();
@@ -17,8 +35,11 @@ function init() {
   camera.rotation.x = Math.PI / 2;
 
   renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+  renderer.setSize(
+    mobileWidth ? window.innerWidth : window.innerWidth - 17,
+    window.innerHeight
+  );
+  homeSection.appendChild(renderer.domElement);
 
   starGeo = new THREE.Geometry();
 
@@ -64,5 +85,3 @@ function animate() {
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
-
-init();

@@ -1,42 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
+canvas {
+  display: block;
+}
+
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
-  background: linear-gradient(#001011, #150920);
-  background-attachment: fixed;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: "Oxygen", sans-serif;
 }
 
-canvas {
+.sticky {
   position: fixed;
+  top: 0;
+  width: 100%;
+  padding-left: 10px;
 }
 
-#mainContainer {
+#Home {
+  background: linear-gradient(#001011, #150920);
+  // position: fixed;
+}
+
+#About {
+  height: 1000px;
+  background: crimson;
+}
+
+#Portfolio {
+  height: 1000px;
+  background: purple;
+}
+
+#Contact {
+  height: 1000px;
+  background: cyan;
+}
+
+#MainMessage {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  z-index: 2;
   text-align: center;
   width: 90%;
 }
 
-#mainContainer > span {
+#MainMessage > span {
   font-size: 1.2em;
   text-align: center;
 }
 
-#mainContainer > span > span {
+#MainMessage > span > span {
   // color: #3cbbb1;
   color: #00cc99;
   font-weight: bolder;
 }
 
-#mainContainer > button {
+#MainMessage > button {
   margin-top: 20px;
   font-size: 1.2em;
   border: none;
@@ -50,7 +72,48 @@ canvas {
 }
 
 @media only screen and (min-width: 768px) {
-  #mainContainer > span {
+  #MainMessage > span {
     font-size: 3em;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+  }
+
+  #NavBar {
+    background: blueviolet;
+    color: white;
+    padding: 10px;
+
+    ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        button {
+          border: none;
+          background: transparent;
+          font-family: "Oxygen", sans-serif;
+          font-size: 1.2em;
+          font-weight: bold;
+          color: white;
+        }
+
+        button:hover {
+          color: #00cc99;
+        }
+      }
+
+      li:not(:last-child)::after {
+        content: "";
+        margin: 0 10px;
+        border-right: 3px solid black;
+      }
+    }
   }
 }
