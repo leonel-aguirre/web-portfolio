@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
+$darkergray: #232931;
+$lightergray: #393e46;
+$highlight-blue: #00cc99;
+$highlight-pink: #ea486e;
+$highlight-purple: #9067c6;
+
 canvas {
   display: block;
 }
@@ -17,6 +23,10 @@ body {
   padding-left: 10px;
 }
 
+.nav-selected {
+  color: $highlight-purple !important;
+}
+
 #Home {
   background: linear-gradient(#001011, #150920);
   // position: fixed;
@@ -24,17 +34,17 @@ body {
 
 #About {
   height: 1000px;
-  background: crimson;
+  background: $darkergray;
 }
 
 #Portfolio {
   height: 1000px;
-  background: purple;
+  background: $lightergray;
 }
 
 #Contact {
   height: 1000px;
-  background: cyan;
+  background: $darkergray;
 }
 
 #MainMessage {
@@ -53,15 +63,15 @@ body {
 }
 
 #MainMessage > span > span {
-  // color: #3cbbb1;
-  color: #00cc99;
+  color: $highlight-blue;
   font-weight: bolder;
 }
 
-#MainMessage > button {
+#MainMessage > a {
+  display: inline-block;
+  text-decoration: none;
   margin-top: 20px;
   font-size: 1.2em;
-  border: none;
   background-color: transparent;
   font-weight: bold;
   line-height: 28px;
@@ -85,9 +95,9 @@ body {
   }
 
   #NavBar {
-    background: blueviolet;
+    background: $lightergray;
     color: white;
-    padding: 10px;
+    padding: 8px;
 
     ul {
       padding-left: 20px;
@@ -95,24 +105,22 @@ body {
       flex-direction: row;
 
       li {
-        button {
-          border: none;
-          background: transparent;
-          font-family: "Oxygen", sans-serif;
+        a {
           font-size: 1.2em;
           font-weight: bold;
           color: white;
+          text-decoration: none;
         }
 
-        button:hover {
-          color: #00cc99;
+        a:hover {
+          color: lighten($highlight-purple, 10) !important;
         }
       }
 
       li:not(:last-child)::after {
         content: "";
         margin: 0 10px;
-        border-right: 3px solid black;
+        border-right: 3px solid #232931;
       }
     }
   }

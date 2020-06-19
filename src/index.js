@@ -2,18 +2,28 @@ import "./style.scss";
 const THREE = require("three");
 
 let scene, camera, renderer, starGeo, stars;
-let navBar = document.querySelector("#NavBar");
-let homeSection = document.querySelector("#Home");
+let navBar, navBarLIs, actualSection;
+let homeSection, aboutSection, portfolioSection, contactSection;
 
 let mobileWidth = window.innerWidth < 768;
 
-if (mobileWidth) alert("hello");
-
 window.onload = () => {
+  navBar = document.querySelector("#NavBar");
+  navBarLIs = Array.from(navBar.querySelector("ul").getElementsByTagName("li"));
+  actualSection = -1;
+
+  homeSection = document.querySelector("#Home");
+  aboutSection = document.querySelector("#About");
+  portfolioSection = document.querySelector("#Portfolio");
+  contactSection = document.querySelector("#Contact");
+
   init();
+
   let initialNavBarOffset = navBar.offsetTop;
 
   window.onscroll = () => {
+    checkNavBar();
+
     if (window.pageYOffset >= initialNavBarOffset) {
       navBar.classList.add("sticky");
     } else {
@@ -85,3 +95,36 @@ function animate() {
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
+
+const checkNavBar = () => {
+  let actualY = window.pageYOffset;
+  let selectedIndex;
+
+  if (actualY >= homeSection.offsetTop && actualY < aboutSection.offsetTop) {
+    selectedIndex = 0;
+  } else if (
+    actualY >= aboutSection.offsetTop &&
+    actualY < portfolioSection.offsetTop
+  ) {
+    selectedIndex = 1;
+  } else if (
+    actualY >= portfolioSection.offsetTop &&
+    actualY < contactSection.offsetTop
+  ) {
+    selectedIndex = 2;
+  } else if (actualY >= contactSection.offsetTop) {
+    selectedIndex = 3;
+  }
+
+  if (selectedIndex != actualSection) updateNavBar(selectedIndex);
+
+  function updateNavBar(indexToHighlight) {
+    navBarLIs.forEach((e, i) => {
+      if (i == indexToHighlight) {
+        e.querySelector("a").classList.add("nav-selected");
+      } else {
+        e.querySelector("a").classList.remove("nav-selected");
+      }
+    });
+  }
+};
