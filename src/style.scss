@@ -2,6 +2,7 @@
 
 $darkergray: #232931;
 $lightergray: #393e46;
+$almostWhite: #ddd;
 $highlight-blue: #00cc99;
 $highlight-pink: #ea486e;
 $highlight-purple: #9067c6;
@@ -13,6 +14,7 @@ canvas {
 body {
   margin: 0;
   // overflow-x: hidden;
+  background-color: #001011;
   font-family: "Oxygen", sans-serif;
 }
 
@@ -27,9 +29,17 @@ body {
   color: $highlight-purple !important;
 }
 
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.navbar-hidden {
+  top: -116px;
+}
+
 #Home {
-  background: linear-gradient(#001011, #150920);
-  // position: fixed;
+  background: linear-gradient(#001011, #49375a);
+  height: 100vh;
 }
 
 #About {
@@ -81,41 +91,71 @@ body {
   border: 2px solid white;
 }
 
+ul,
+li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+#NavBarContainer {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: top 1s;
+}
+
+#NavBar {
+  background: transparentize($darkergray, 0.3);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  padding: 8px;
+  text-align: center;
+  color: white;
+  align-self: stretch;
+
+  li {
+    a {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: lighten($highlight-purple, 10) !important;
+    }
+  }
+}
+
+#NavBarTab {
+  background: $almostWhite;
+  color: $lightergray;
+  border-radius: 0 0 10px 10px;
+  padding: 2.5px 10px 0 10px;
+  width: 50px;
+  text-align: center;
+
+  svg {
+    width: 20px;
+    transition: transform 0.25s linear;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #MainMessage > span {
     font-size: 3em;
   }
 
-  ul,
-  li {
-    list-style-type: none;
-    list-style-position: inside;
-    margin: 0;
-    padding: 0;
-  }
-
   #NavBar {
     background: $lightergray;
-    color: white;
-    padding: 8px;
 
     ul {
       padding-left: 20px;
       display: flex;
       flex-direction: row;
-
-      li {
-        a {
-          font-size: 1.2em;
-          font-weight: bold;
-          color: white;
-          text-decoration: none;
-        }
-
-        a:hover {
-          color: lighten($highlight-purple, 10) !important;
-        }
-      }
 
       li:not(:last-child)::after {
         content: "";
@@ -123,5 +163,9 @@ body {
         border-right: 3px solid #232931;
       }
     }
+  }
+
+  #NavBarTab {
+    display: none;
   }
 }
