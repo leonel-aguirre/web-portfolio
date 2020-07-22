@@ -1,0 +1,68 @@
+[
+  {
+    "color": "#06d6a0",
+    "img": "https://cdn.worldvectorlogo.com/logos/express-109.svg",
+    "name": "Express JS",
+    "value": 35
+  },
+  {
+    "color": "#ff5964",
+    "img": "https://cdn.worldvectorlogo.com/logos/git.svg",
+    "name": "Git",
+    "value": 65
+  },
+  {
+    "color": "#73d2de",
+    "img": "https://cdn.worldvectorlogo.com/logos/css-5.svg",
+    "name": "CSS3",
+    "value": 85
+  },
+  {
+    "color": "#f05d23",
+    "img": "https://cdn.worldvectorlogo.com/logos/d3-2.svg",
+    "name": "D3",
+    "value": 30
+  },
+  {
+    "color": "#f05d23",
+    "img": "https://cdn.worldvectorlogo.com/logos/html-5.svg",
+    "name": "HTML5",
+    "value": 80
+  },
+  {
+    "color": "#4c4c9d",
+    "img": "https://cdn.worldvectorlogo.com/logos/java-14.svg",
+    "name": "Java",
+    "value": 80
+  },
+  {
+    "color": "#eddb1d",
+    "img": "https://cdn.worldvectorlogo.com/logos/javascript.svg",
+    "name": "Javascript",
+    "value": 85
+  },
+  {
+    "color": "#31d843",
+    "img": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+    "name": "NodeJS",
+    "value": 70
+  },
+  {
+    "color": "#7796cb",
+    "img": "https://cdn.worldvectorlogo.com/logos/php-1.svg",
+    "name": "PHP",
+    "value": 50
+  },
+  {
+    "color": "#ff7f11",
+    "img": "https://cdn.worldvectorlogo.com/logos/firebase-1.svg",
+    "name": "Firebase",
+    "value": 45
+  },
+  {
+    "color": "#6ad5cb",
+    "img": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+    "name": "React",
+    "value": 60
+  }
+]
