@@ -18,6 +18,105 @@ body {
   font-family: "Oxygen", sans-serif;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20%;
+
+  label {
+    color: $almostWhite;
+    padding-bottom: 3px;
+    font-family: "Oxygen", sans-serif;
+  }
+
+  input {
+    margin-bottom: 10px;
+    background-color: #fff8;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: bold;
+  }
+
+  textarea {
+    margin-bottom: 10px;
+    background-color: #fff8;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: bold;
+  }
+
+  button {
+    background-color: $highlight-blue;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: darken($highlight-blue, 5);
+  }
+
+  button:active {
+    background-color: darken($highlight-blue, 10);
+  }
+}
+
+.paragraph {
+  text-align: center;
+  font-size: 2em;
+  color: $almostWhite;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: teal;
+  border-radius: 10px;
+}
+
+#CardsContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 15px;
+  padding: 50px;
+}
+
+.card-top {
+  background: #fff2;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.card-center {
+  flex: 1;
+}
+
+.card-bottom {
+  background: #fff2;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+}
+
+.card-center > img {
+  width: 100%;
+  height: 100%;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -39,9 +138,7 @@ body {
 
 .section-container {
   padding: 55px 10px;
-  display: grid;
   // grid-template-columns: 40% 60%;
-  grid-template-rows: auto auto auto;
 
   .title {
     color: $highlight-blue;
@@ -79,12 +176,10 @@ body {
 }
 
 #Portfolio {
-  height: 1000px;
   background: $darkergray;
 }
 
 #Contact {
-  height: 1000px;
   background: $lightergray;
 }
 
@@ -181,17 +276,20 @@ li {
   display: flex;
   justify-content: center;
 
-  img {
-    // filter: hue-rotate(174deg);
-  }
+  // img {
+  //   filter: hue-rotate(174deg);
+  // }
+}
+
+.grid-two-columns {
+  display: grid;
+
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
 }
 
 @media only screen and (min-width: 768px) {
   .section-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-
     h1,
     #ChartContainer {
       grid-column-start: 1;
@@ -200,7 +298,8 @@ li {
 
     div {
       img {
-        max-width: 100%;
+        border-radius: 100%;
+        max-width: 50%;
         height: auto;
         margin: 0 100px;
       }

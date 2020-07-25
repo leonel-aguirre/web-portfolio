@@ -1,4 +1,7 @@
 import "./style.scss";
+import ProjectCard from "./ProjectCard";
+const ReactDOM = require("react-dom");
+const React = require("react");
 const d3 = require("d3");
 const THREE = require("three");
 
@@ -16,6 +19,8 @@ let homeSection,
   technologiesSection,
   portfolioSection,
   contactSection;
+let nameInput, emailInput, messageInput, mailFormButton;
+
 let mobileNavBarShown = false;
 
 let mobileWidth = window.innerWidth < 768;
@@ -35,11 +40,17 @@ window.onload = () => {
   portfolioSection = document.querySelector("#Portfolio");
   contactSection = document.querySelector("#Contact");
 
+  nameInput = document.querySelector("#NameInput");
+  emailInput = document.querySelector("#EmailInput");
+  messageInput = document.querySelector("#MessageInput");
+  mailFormButton = document.querySelector("#MailFormButton");
+
   chartContainer = document.querySelector("#ChartContainer");
 
   init();
   addListeners();
   loadSVG();
+  loadReactComponents();
 
   let initialNavBarOffset = navBarContainer.offsetTop;
 
@@ -105,7 +116,9 @@ function init() {
     starGeo.vertices.push(star);
   }
 
-  let sprite = new THREE.TextureLoader().load("../assets/star.png");
+  let sprite = new THREE.TextureLoader().load(
+    "https://firebasestorage.googleapis.com/v0/b/personal-web-a99ce.appspot.com/o/star.png?alt=media&token=3e3ef3c1-6cdb-42ff-82f7-5c518c913367"
+  );
   let starMaterial = new THREE.PointsMaterial({
     color: 0xaaaaaa,
     size: 1,
@@ -368,6 +381,32 @@ function loadSVG() {
     });
 }
 
+function loadReactComponents() {
+  let cards = [];
+
+  let lorem = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum urna non arcu viverra efficitur. Aenean id congue sem.",
+    "Phasellus eget fermentum magna. Vestibulum ligula metus, ornare et urna sed, bibendum dignissim dolor. Maecenas iaculis nunc eu risus posuere sagittis. Mauris malesuada est at massa efficitur rhoncus.",
+    "Proin malesuada ultrices mi et pellentesque. Cras quis massa nulla. Etiam leo ex, molestie ut mi non, bibendum posuere mi.",
+  ];
+
+  for (let i = 0; i < 3; i++)
+    cards.push(
+      <ProjectCard
+        title="TITLE"
+        description={lorem[Math.floor(Math.random() * 3)]}
+        image={`http://placekitten.com/${
+          Math.floor(Math.random() * 100) + 300
+        }/${Math.floor(Math.random() * 100) + 300}`}
+      />
+    );
+
+  ReactDOM.render(
+    <div id="CardsContainer">{cards}</div>,
+    document.querySelector("#root")
+  );
+}
+
 const checkNavBar = () => {
   let actualY = window.pageYOffset;
   let selectedIndex;
@@ -408,7 +447,48 @@ const checkNavBar = () => {
 
 const addListeners = () => {
   navBarTab.addEventListener("click", toggleMobileNavBar);
+  mailFormButton.addEventListener("click", sendMail);
 };
+
+function sendMail() {
+  if (
+    nameInput.value.length > 0 &&
+    emailInput.value.length > 0 &&
+    messageInput.value.length > 0
+  ) {
+    let body = {
+      from: "Web Portfolio Mailer <noisyapple41@gmail.com>",
+      dest: "leonel.aguirre77@gmail.com",
+      subject: "Message from Web Portfolio",
+      html: `
+      <h2>Hey! <span style="color: #ea486e">${nameInput.value}</span> &lt;${emailInput.value}&gt; whats to contact you:</h2>
+      <pre style="font-size: 15px">${messageInput.value}</pre>
+      `,
+    };
+
+    fetch(
+      "https://us-central1-personal-web-a99ce.cloudfunctions.net/sendMail",
+      {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => console.log(res))
+      .catch((error) => console.error("Error:", error))
+      .then((response) => console.log("Success:", response));
+
+    clearForm();
+  }
+}
+
+function clearForm() {
+  nameInput.value = "";
+  emailInput.value = "";
+  messageInput.value = "";
+}
 
 const toggleMobileNavBar = () => {
   if (!mobileNavBarShown) {

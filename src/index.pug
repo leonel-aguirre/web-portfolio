@@ -28,18 +28,29 @@ html(lang="en")
           path(fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z")
     div#NavBarOffset
     section#About
-      div.section-container
+      div.section-container.grid-two-columns
         h1.title Acerca de
         div#AboutImage
-          img(src="/assets/ginger-cat-65.svg")
+          img(src="https://firebasestorage.googleapis.com/v0/b/personal-web-a99ce.appspot.com/o/ginger-cat-65.svg?alt=media&token=f2a7e67e-7d3c-40e7-8436-41ca63c27448")
         div#AboutDescription
           h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque in perferendis officiis voluptas iure ipsam vero ratione atque accusantium, totam consequuntur voluptatem animi? Nostrum explicabo commodi saepe a voluptatum assumenda voluptatibus omnis, aliquam ipsam corrupti eaque dolore ut officia voluptate quasi ipsum nobis qui quia, totam temporibus. Officia reiciendis explicabo maxime eveniet repudiandae ducimus mollitia esse soluta amet, vero architecto, harum autem repellendus culpa, a non laudantium fugit illum eius quos ea optio. Eius fugiat nulla veniam explicabo perspiciatis, sapiente autem nam quasi corporis vel dolores ducimus non nostrum, temporibus facilis. Magni iste totam voluptates.
     section#Technologies
-      div.section-container
+      div.section-container.grid-two-columns
         h1.title Tecnologias
         div#ChartContainer
             div(id='BubbleChart')
             div(id='BarChart')
     section#Portfolio
+      div#root
     section#Contact
-
+      div.section-container
+        h1.title Contacto
+        p.paragraph Escribeme:
+        form.email-form
+          label(for="contact-name") Nombre: 
+          input(type='text', name="contact-name" id="NameInput")
+          label(for="contact-email") Correo Electronico: 
+          input(type="email", name="contact-email" id="EmailInput")
+          label(for="contact-message") Mensaje: 
+          textarea(name="contact-message", cols="30", rows="10" id="MessageInput")
+          button(type="button" id="MailFormButton") ENVIAR
