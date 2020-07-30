@@ -4,6 +4,7 @@ const ReactDOM = require("react-dom");
 const React = require("react");
 const d3 = require("d3");
 const THREE = require("three");
+const $clamp = require("clamp-js");
 
 let scene, camera, renderer, starGeo, stars;
 let navBarContainer,
@@ -384,27 +385,30 @@ function loadSVG() {
 function loadReactComponents() {
   let cards = [];
 
-  let lorem = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum urna non arcu viverra efficitur. Aenean id congue sem.",
-    "Phasellus eget fermentum magna. Vestibulum ligula metus, ornare et urna sed, bibendum dignissim dolor. Maecenas iaculis nunc eu risus posuere sagittis. Mauris malesuada est at massa efficitur rhoncus.",
-    "Proin malesuada ultrices mi et pellentesque. Cras quis massa nulla. Etiam leo ex, molestie ut mi non, bibendum posuere mi.",
-  ];
+  fetch("https://personal-web-a99ce.firebaseio.com/projects.json")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      for (let i = 0; i < data.length; i++)
+        cards.push(
+          <ProjectCard
+            key={i}
+            title={data[i].title}
+            description={data[i].description}
+            projectURL={data[i].projectURL}
+            image={data[i].imageURL}
+          />
+        );
 
-  for (let i = 0; i < 3; i++)
-    cards.push(
-      <ProjectCard
-        title="TITLE"
-        description={lorem[Math.floor(Math.random() * 3)]}
-        image={`http://placekitten.com/${
-          Math.floor(Math.random() * 100) + 300
-        }/${Math.floor(Math.random() * 100) + 300}`}
-      />
-    );
+      ReactDOM.render(
+        <div id="CardsContainer">{cards}</div>,
+        document.querySelector("#Cards")
+      );
 
-  ReactDOM.render(
-    <div id="CardsContainer">{cards}</div>,
-    document.querySelector("#root")
-  );
+      let bottoms = document.querySelectorAll(".clamp");
+
+      bottoms.forEach((e) => $clamp(e, { clamp: 5 }));
+    });
 }
 
 const checkNavBar = () => {

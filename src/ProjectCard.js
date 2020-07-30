@@ -3,23 +3,24 @@ import React, { Component } from "react";
 export default class ProjectCard extends React.Component {
   render() {
     return (
-      <div class="project-card" style={{ background: randomHex() }}>
-        <div class="card-top">{this.props.title}</div>
-        <div class="card-center">
-          <img src={this.props.image}></img>
+      <div className="project-card-container">
+        <div className="project-card" style={{ background: "#9067c6" }}>
+          <div className="card-top">{this.props.title}</div>
+          <a
+            href={this.props.projectURL}
+            target="_blank"
+            className="card-center"
+            style={{ backgroundImage: `url(${this.props.image})` }}
+          ></a>
+          <div className="card-bottom">
+            <div className="clamp">{this.props.description}</div>
+          </div>
         </div>
-        <div class="card-bottom">{this.props.description}</div>
       </div>
     );
   }
 }
 
-function randomHex() {
-  let letters = "0123456789ABCDEF";
-  let newColor = "#";
-
-  for (let i = 0; i < 6; i++)
-    newColor += letters[Math.floor(Math.random() * 16)];
-
-  return newColor;
+function randomColor() {
+  return `hsl(${Math.random() * 180 + 180}deg, 50%, 60%)`;
 }
