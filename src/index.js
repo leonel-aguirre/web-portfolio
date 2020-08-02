@@ -21,6 +21,8 @@ let homeSection,
   contactSection;
 let nameInput, emailInput, messageInput, mailFormButton;
 
+let modal, modalDisposeButton;
+
 let mobileNavBarShown = false;
 
 let mobileWidth = window.innerWidth < 768;
@@ -46,6 +48,9 @@ window.onload = () => {
   mailFormButton = document.querySelector("#MailFormButton");
 
   chartContainer = document.querySelector("#ChartContainer");
+
+  modal = document.querySelector("#Modal");
+  modalDisposeButton = document.querySelector("#ModalDisposeButton");
 
   init();
   addListeners();
@@ -465,7 +470,16 @@ const checkNavBar = () => {
 const addListeners = () => {
   navBarTab.addEventListener("click", toggleMobileNavBar);
   mailFormButton.addEventListener("click", sendMail);
+  modalDisposeButton.addEventListener("click", hideModal);
 };
+
+function hideModal() {
+  modal.classList.add("modal-hidden");
+}
+
+function showModal() {
+  modal.classList.remove("modal-hidden");
+}
 
 function sendMail() {
   if (
@@ -498,6 +512,7 @@ function sendMail() {
       .then((response) => console.log("Success:", response));
 
     clearForm();
+    showModal();
   }
 }
 

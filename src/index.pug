@@ -56,3 +56,12 @@ html(lang="en")
           label(for="contact-message") Mensaje: 
           textarea(name="contact-message", cols="30", rows="10" id="MessageInput")
           button(type="button" id="MailFormButton") ENVIAR
+    div(id="Modal" class="modal-container sticky modal-hidden")
+      div.modal-box
+        div.modal-icon
+          i(class="fas fa-paper-plane")
+        div.modal-message
+          p Tu mensaje ha sido enviado exitosamente!
+        div.modal-button
+          button(id="ModalDisposeButton") OK
+
