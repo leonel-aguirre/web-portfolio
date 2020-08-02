@@ -14,11 +14,7 @@ let navBarContainer,
   navBarOffset,
   chartContainer;
 let initialNavBarHeight;
-let homeSection,
-  aboutSection,
-  technologiesSection,
-  portfolioSection,
-  contactSection;
+let homeSection, aboutSection, skillsSection, portfolioSection, contactSection;
 let nameInput, emailInput, messageInput, mailFormButton;
 
 let modal, modalDisposeButton;
@@ -38,7 +34,7 @@ window.onload = () => {
 
   homeSection = document.querySelector("#Home");
   aboutSection = document.querySelector("#About");
-  technologiesSection = document.querySelector("#Technologies");
+  skillsSection = document.querySelector("#Skills");
   portfolioSection = document.querySelector("#Portfolio");
   contactSection = document.querySelector("#Contact");
 
@@ -56,6 +52,7 @@ window.onload = () => {
   addListeners();
   loadSVG();
   loadReactComponents();
+  clipSeparators();
 
   let initialNavBarOffset = navBarContainer.offsetTop;
 
@@ -400,6 +397,7 @@ function loadReactComponents() {
             title={data[i].title}
             description={data[i].description}
             projectURL={data[i].projectURL}
+            githubURL={data[i].githubURL}
             image={data[i].imageURL}
           />
         );
@@ -429,6 +427,44 @@ function loadReactComponents() {
     });
 }
 
+function clipSeparators() {
+  let separatorsT1 = document.querySelectorAll(
+    ".separator.separator-type-1 .spikes"
+  );
+  let separatorsT2 = document.querySelectorAll(
+    ".separator.separator-type-2 .spikes"
+  );
+
+  for (let i = 0; i < separatorsT1.length; i++)
+    separatorsT1[i].style.clipPath = generateSpikes(10, true);
+
+  for (let i = 0; i < separatorsT2.length; i++)
+    separatorsT2[i].style.clipPath = generateSpikes(10, false);
+
+  function generateSpikes(nSpikes, toBottom) {
+    let points = nSpikes * 2 + 1;
+    let yIterator = false;
+    let step = 100 / (points - 1);
+    let x = 0;
+
+    let clipPathValue = `polygon(0% ${toBottom ? 0 : 100}%`;
+    x += step;
+
+    for (let i = 0; i < points - 1; i++) {
+      if (yIterator) {
+        clipPathValue += `, ${x}% ${toBottom ? 0 : 100}%`;
+      } else {
+        clipPathValue += `, ${x}% ${toBottom ? 100 : 0}%`;
+      }
+
+      x += step;
+      yIterator = !yIterator;
+    }
+
+    return clipPathValue + ")";
+  }
+}
+
 const checkNavBar = () => {
   let actualY = window.pageYOffset;
   let selectedIndex;
@@ -437,11 +473,11 @@ const checkNavBar = () => {
     selectedIndex = 0;
   } else if (
     actualY >= aboutSection.offsetTop - initialNavBarHeight &&
-    actualY < technologiesSection.offsetTop - initialNavBarHeight
+    actualY < skillsSection.offsetTop - initialNavBarHeight
   ) {
     selectedIndex = 1;
   } else if (
-    actualY >= technologiesSection.offsetTop - initialNavBarHeight &&
+    actualY >= skillsSection.offsetTop - initialNavBarHeight &&
     actualY < portfolioSection.offsetTop - initialNavBarHeight
   ) {
     selectedIndex = 2;
@@ -478,6 +514,7 @@ function hideModal() {
 }
 
 function showModal() {
+  modal.style.transition = "visibility 1s, opacity 1s";
   modal.classList.remove("modal-hidden");
 }
 
