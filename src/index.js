@@ -4,7 +4,6 @@ const ReactDOM = require("react-dom");
 const React = require("react");
 const d3 = require("d3");
 const THREE = require("three");
-const $clamp = require("clamp-js");
 
 let scene, camera, renderer, starGeo, stars;
 let navBarContainer,
@@ -405,9 +404,23 @@ function loadReactComponents() {
         document.querySelector("#Cards")
       );
 
-      let bottoms = document.querySelectorAll(".clamp");
+      let togglers = document.querySelectorAll(".description-toggler");
+      let descriptions = document.querySelectorAll(".description");
 
-      bottoms.forEach((e) => $clamp(e, { clamp: 5 }));
+      for (let i = 0; i < togglers.length; i++) {
+        descriptions[i].style.height = descriptions[i].offsetHeight + "px";
+        descriptions[i].classList.add("collapsed");
+
+        togglers[i].addEventListener("click", () => {
+          var desc = descriptions[i];
+
+          if (desc.classList.contains("collapsed")) {
+            desc.classList.remove("collapsed");
+          } else {
+            desc.classList.add("collapsed");
+          }
+        });
+      }
     });
 }
 
@@ -498,10 +511,10 @@ const toggleMobileNavBar = () => {
   if (!mobileNavBarShown) {
     mobileNavBarShown = true;
     navBarContainer.classList.remove("navbar-hidden");
-    navBarTab.getElementsByTagName("svg")[0].classList.add("rotate180");
+    navBarTab.getElementsByTagName("i")[0].classList.add("rotate180");
   } else {
     mobileNavBarShown = false;
     navBarContainer.classList.add("navbar-hidden");
-    navBarTab.getElementsByTagName("svg")[0].classList.remove("rotate180");
+    navBarTab.getElementsByTagName("i")[0].classList.remove("rotate180");
   }
 };
