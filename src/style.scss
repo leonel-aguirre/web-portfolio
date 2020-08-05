@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-$darkergray: #232931;
-$lightergray: #393e46;
+$darkergray: #3a3a50;
+$lightergray: #2f2f2f;
 $almostWhite: #ddd;
-$highlight-blue: #00cc99;
+$highlight-blue: #009688;
 $highlight-pink: #ea486e;
-$highlight-purple: #9067c6;
+$highlight-purple: #f7d16f;
 
 canvas {
   display: block;
@@ -75,12 +75,6 @@ body {
   }
 }
 
-.paragraph {
-  text-align: center;
-  font-size: 2em;
-  color: $almostWhite;
-}
-
 // PROJECT CARDS
 
 .project-card-container {
@@ -96,7 +90,7 @@ body {
 #CardsContainer {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   padding: 5px;
 }
@@ -316,38 +310,16 @@ body {
 // MODAL
 
 .title {
-  color: $highlight-blue;
+  color: #0ac5b4;
   text-align: center;
   font-size: 2em;
   text-transform: uppercase;
   font-weight: bold;
-}
-
-.section-container {
-  padding: 55px 10px;
-  // grid-template-columns: 40% 60%;
-
-  div {
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    h1 {
-      color: white;
-      text-align: center;
-      font-size: 1em;
-      padding: 0 15px 30px 15px;
-    }
-  }
+  margin-top: 0;
 }
 
 #Home {
-  background: linear-gradient(#001011, #49375a);
-}
-
-#About {
-  background: $darkergray;
+  background: linear-gradient(#000000, #000919);
 }
 
 .separator {
@@ -358,11 +330,11 @@ body {
 }
 
 .separator.separator-type-1 {
-  filter: drop-shadow(0px 5px 4px #222);
+  filter: drop-shadow(0px 9px 4px #222);
 }
 
 .separator.separator-type-2 {
-  filter: drop-shadow(0px -5px 4px #222);
+  filter: drop-shadow(0px -9px 4px #222);
 }
 
 #Skills {
@@ -371,14 +343,15 @@ body {
 
 #Portfolio {
   background: $darkergray;
-
-  // * {
-  //   overflow: hidden;
-  // }
 }
 
 #Contact {
   background: $lightergray;
+}
+
+#Footer {
+  background: $darkergray;
+  height: 200px;
 }
 
 #MainMessage {
@@ -473,15 +446,6 @@ li {
   }
 }
 
-#AboutImage {
-  display: flex;
-  justify-content: center;
-
-  // img {
-  //   filter: hue-rotate(174deg);
-  // }
-}
-
 .grid-two-columns {
   display: grid;
 
@@ -489,7 +453,100 @@ li {
   grid-template-rows: auto auto;
 }
 
+.section-container {
+  padding: 40px 20px;
+  // grid-template-columns: 40% 60%;
+
+  div {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.paragraph {
+  text-align: center;
+  font-size: 1em;
+
+  font-weight: bold;
+  color: white;
+}
+
+#About {
+  background: $darkergray;
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  #AboutDescription {
+    width: auto;
+    padding: 0;
+
+    img {
+      padding: 0 50px;
+    }
+  }
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+//////////////// DESKTOP STYLES ////////////////
+//////////////// DESKTOP STYLES ////////////////
+//////////////// DESKTOP STYLES ////////////////
+//////////////// DESKTOP STYLES ////////////////
+//////////////// DESKTOP STYLES ////////////////
+
 @media only screen and (min-width: 768px) {
+  .paragraph {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  .desktop-hidden {
+    display: none;
+  }
+
+  .mobile-hidden {
+    display: block;
+  }
+
+  #About {
+    .section-container {
+      padding: 60px 90px;
+      flex-direction: row;
+    }
+
+    #AboutDescription {
+      order: 1;
+
+      padding-right: 100px;
+      width: 75%;
+    }
+
+    #AboutImage {
+      order: 2;
+
+      flex: 1;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      text-align: left;
+    }
+  }
+
   .portfolio-container {
     padding: 55px 20px;
   }
@@ -506,22 +563,11 @@ li {
       grid-column-start: 1;
       grid-column-end: 3;
     }
+  }
 
-    div {
-      img {
-        max-width: 50%;
-        height: auto;
-        margin: 0 100px;
-      }
-
-      p {
-        padding: 0 50px 0 0;
-        text-align: justify;
-        font-size: 1.5em;
-        font-weight: bold;
-        color: white;
-      }
-    }
+  .section-container {
+    padding: 60px;
+    // grid-template-columns: 40% 60%;
   }
 
   #ChartContainer {
@@ -534,8 +580,8 @@ li {
   }
 
   #NavBar {
-    background: darken($highlight-blue, 10);
-    filter: drop-shadow(0px 5px 4px #222);
+    background: #242531;
+    filter: drop-shadow(0px 3px 4px #222);
 
     ul {
       padding-left: 20px;

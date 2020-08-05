@@ -5,12 +5,16 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Leonel Aguirre
     script(src="https://kit.fontawesome.com/aed31f57e0.js" crossorigin="anonymous")
+    link(rel="icon" type="image/png" href="https://img.icons8.com/emoji/48/000000/rocket-emji.png")
   body
     section#Home
       div#MainMessage
         span Hola, mi nombre es <span> Leonel Aguirre</span>.<br> Soy desarrollador web.
         br
         a(href='#About') Mira mi trabajo
+    div.separator.separator-type-2.desktop-hidden
+        div.spikes
+        div.bar
     div#NavBarContainer.navbar-hidden
       nav#NavBar
         ul
@@ -28,12 +32,13 @@ html(lang="en")
         i(class="fas fa-chevron-down")
     div#NavBarOffset
     section#About
-      div.section-container.grid-two-columns
-        h1.title Acerca de mi
-        div#AboutImage
-          img(src="https://firebasestorage.googleapis.com/v0/b/personal-web-a99ce.appspot.com/o/ginger-cat-65.svg?alt=media&token=f2a7e67e-7d3c-40e7-8436-41ca63c27448")
+      div.section-container
+        div#AboutImage.mobile-hidden
+          img(src="https://ouch-cdn.icons8.com/preview/427/81f3e497-5fdb-4b3b-9acd-9fc0b656e030.png")
         div#AboutDescription
-          p Soy un desarrollador web amateur de 22 años, actualmente estoy estudiando la carrera de Ingenieria en Sistemas Computacionales en el Instituto Tecnologico de Leon. Me apasiona el desarrollo de software ya que me permite modelar mis ideas para conseguir resultados impresionantes, mi constante curiosidad hacia como funciona mi entorno me ayuda a siempre mantenerme aprendiendo nuevas cosas.
+          h1.title Acerca de mi
+          img#AboutImage.desktop-hidden(src="https://ouch-cdn.icons8.com/preview/427/81f3e497-5fdb-4b3b-9acd-9fc0b656e030.png")
+          p.paragraph Soy un desarrollador web amateur de 22 años, actualmente estoy estudiando la carrera de Ingenieria en Sistemas Computacionales en el Instituto Tecnologico de Leon. Me apasiona el desarrollo de software ya que me permite modelar mis ideas para conseguir resultados impresionantes, mi constante curiosidad hacia como funciona mi entorno me ayuda a siempre mantenerme aprendiendo nuevas cosas.
     section#Skills
       div.separator.separator-type-1
         div.bar
@@ -47,16 +52,15 @@ html(lang="en")
         div.spikes
         div.bar
     section#Portfolio
-      div.portfolio-container
+      div.section-container
         h1.title Portafolio
         div#Cards
     section#Contact
       div.separator.separator-type-1
         div.bar
         div.spikes
-      div.contact-container
+      div.section-container
         h1.title Contacto
-        p.paragraph Escribeme:
         form.email-form
           label(for="contact-name") Nombre: 
           input(type='text', name="contact-name" id="NameInput")
@@ -65,6 +69,10 @@ html(lang="en")
           label(for="contact-message") Mensaje: 
           textarea(name="contact-message", cols="30", rows="10" id="MessageInput")
           button(type="button" id="MailFormButton") ENVIAR
+      div.separator.separator-type-2
+        div.spikes
+        div.bar
+    section#Footer
     div(id="Modal" class="modal-container sticky modal-hidden")
       div.modal-box
         div.modal-icon
