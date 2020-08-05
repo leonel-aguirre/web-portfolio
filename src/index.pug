@@ -11,7 +11,7 @@ html(lang="en")
       div#MainMessage
         span Hola, mi nombre es <span> Leonel Aguirre</span>.<br> Soy desarrollador web.
         br
-        a(href='#About') Mira mi trabajo
+        a(href='#About') Conoceme
     div.separator.separator-type-2.desktop-hidden
         div.spikes
         div.bar
@@ -44,8 +44,9 @@ html(lang="en")
         div.bar
         div.spikes
       div.section-container.grid-two-columns
-        h1.title Habilidades
-        div#ChartContainer
+        h1.title.onecolumn Habilidades
+        p.paragraph.onecolumn Estas son algunas de mis habilidades
+        div#ChartContainer.onecolumn
             div(id='BubbleChart')
             div(id='BarChart')
       div.separator.separator-type-2
@@ -54,6 +55,7 @@ html(lang="en")
     section#Portfolio
       div.section-container
         h1.title Portafolio
+        p.paragraph Estos son algunos de mis proyectos.
         div#Cards
     section#Contact
       div.separator.separator-type-1
@@ -61,6 +63,7 @@ html(lang="en")
         div.spikes
       div.section-container
         h1.title Contacto
+        p.paragraph Puedes contactarme escribiendo un mensaje
         form.email-form
           label(for="contact-name") Nombre: 
           input(type='text', name="contact-name" id="NameInput")
@@ -72,13 +75,13 @@ html(lang="en")
       div.separator.separator-type-2
         div.spikes
         div.bar
-    section#Footer
+    footer#Footer Designed and built by <a href="https://github.com/NoisyApple" target="_blank">Leonel Aguirre</a>, 2020.
     div(id="Modal" class="modal-container sticky modal-hidden")
       div.modal-box
         div.modal-icon
           i(class="fas fa-paper-plane")
         div.modal-message
-          p Tu mensaje ha sido enviado exitosamente!
+          p Tu mensaje ha sido enviado exitosamente! <br> Te respondere pronto!
         div.modal-button
           button(id="ModalDisposeButton") OK
 

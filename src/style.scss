@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap");
 
 $darkergray: #3a3a50;
-$lightergray: #2f2f2f;
+$lightergray: #545454;
 $almostWhite: #ddd;
-$highlight-blue: #009688;
-$highlight-pink: #ea486e;
-$highlight-purple: #f7d16f;
+$highlight-blue: #60ffc4;
+$highlight-pink: #ffeb3b;
+$highlight-purple: #60ffc4;
 
 canvas {
   display: block;
@@ -14,7 +15,7 @@ canvas {
 body {
   margin: 0;
   // overflow-x: hidden;
-  background-color: #001011;
+  background-color: #000919;
   font-family: "Oxygen", sans-serif;
 }
 
@@ -26,7 +27,6 @@ body {
 .email-form {
   display: flex;
   flex-direction: column;
-  margin: 0 20%;
 
   label {
     color: $almostWhite;
@@ -220,11 +220,11 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
-  filter: drop-shadow(5px 5px 4px #333);
-
+  filter: drop-shadow(5px 5px 4px #3338);
+  width: 80%;
   div {
     text-align: center;
-    color: $almostWhite;
+    color: #222;
   }
 }
 
@@ -285,7 +285,7 @@ body {
   padding: 10px;
   font-family: "Oxygen", sans-serif;
   font-weight: bold;
-  filter: drop-shadow(5px 5px 4px #333);
+  filter: drop-shadow(5px 5px 4px #3338);
 }
 
 #ModalDisposeButton:hover {
@@ -298,24 +298,25 @@ body {
 
 .modal-message {
   font-weight: bold;
-  filter: drop-shadow(5px 5px 4px #333);
+  filter: drop-shadow(5px 5px 4px #3338);
 }
 
 .modal-icon {
   font-size: 55px;
-  filter: drop-shadow(5px 5px 4px #333);
+  filter: drop-shadow(5px 5px 4px #3338);
   animation: ring 5s linear infinite;
 }
 
 // MODAL
 
 .title {
-  color: #0ac5b4;
+  color: #3bffb7;
   text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 0;
+  font-family: "Baloo Chettan 2", cursive;
 }
 
 #Home {
@@ -351,7 +352,13 @@ body {
 
 #Footer {
   background: $darkergray;
-  height: 200px;
+  text-align: center;
+  padding: 0 10px 20px 10px;
+  color: $almostWhite;
+
+  a {
+    color: $highlight-purple;
+  }
 }
 
 #MainMessage {
@@ -490,13 +497,22 @@ li {
     padding: 0;
 
     img {
-      padding: 0 50px;
+      padding: 0 50px 20px 50px;
     }
   }
 }
 
 .mobile-hidden {
   display: none;
+}
+
+.onecolumn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.separator.separator-type-2.desktop-hidden {
+  filter: none;
 }
 
 //////////////// DESKTOP STYLES ////////////////
@@ -506,9 +522,12 @@ li {
 //////////////// DESKTOP STYLES ////////////////
 
 @media only screen and (min-width: 768px) {
+  .title {
+    font-size: 3em;
+  }
+
   .paragraph {
     font-size: 1.5em;
-    text-align: left;
   }
 
   .desktop-hidden {
@@ -523,6 +542,10 @@ li {
     .section-container {
       padding: 60px 90px;
       flex-direction: row;
+    }
+
+    .paragraph {
+      text-align: left;
     }
 
     #AboutDescription {
@@ -558,14 +581,6 @@ li {
   }
 
   .section-container {
-    h1,
-    #ChartContainer {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-  }
-
-  .section-container {
     padding: 60px;
     // grid-template-columns: 40% 60%;
   }
@@ -598,5 +613,17 @@ li {
 
   #NavBarTab {
     display: none;
+  }
+
+  #CardsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .email-form {
+    margin: 0 20%;
+  }
+
+  .modal-box {
+    width: auto;
   }
 }
