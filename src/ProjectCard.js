@@ -2,15 +2,15 @@ import React, { Component } from "react";
 
 export default class ProjectCard extends React.Component {
   state = {
-    buttonText: "mostrar descripcion",
+    buttonText: "mostrar descripción",
     color: randomColor(),
   };
 
   toggleDescription = () => {
-    if (this.state.buttonText == "mostrar descripcion") {
-      this.setState({ buttonText: "ocultar descripcion" });
+    if (this.state.buttonText == "mostrar descripción") {
+      this.setState({ buttonText: "ocultar descripción" });
     } else {
-      this.setState({ buttonText: "mostrar descripcion" });
+      this.setState({ buttonText: "mostrar descripción" });
     }
   };
 
@@ -35,7 +35,8 @@ export default class ProjectCard extends React.Component {
             <p>{this.props.description}</p>
           </div>
         </div>
-        <div className="card-links">
+        <div className="card-bottom">
+          <span className="card-date">{this.props.projectDate}</span>
           <a href={this.props.projectURL} target="_blank">
             <i className="fas fa-globe-americas"></i>
           </a>

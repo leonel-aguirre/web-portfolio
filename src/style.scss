@@ -100,7 +100,7 @@ body {
   border-radius: 10px 10px 0 0;
   padding: 10px;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 17px;
 }
 
 .card-image {
@@ -153,22 +153,30 @@ body {
   height: 0 !important;
 }
 
-.card-links {
+.card-bottom {
   display: flex;
-  /*   height: 20%; */
   place-content: flex-end;
-  font-size: 20px;
+  font-size: 23px;
   background: #0002;
   border-radius: 0 0 10px 10px;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
-.card-links > a {
-  margin-left: 5px;
+.card-date {
+  flex: 1;
+  font-weight: bold;
+  color: #000a;
+  text-transform: uppercase;
+  align-self: center;
+  font-size: 17px;
+}
+
+.card-bottom > a {
+  margin-left: 8px;
   color: #000a;
 }
 
-.card-links > a:hover {
+.card-bottom > a:hover {
   color: #000e;
 }
 
@@ -395,6 +403,24 @@ body {
   border: 2px solid white;
 }
 
+#AboutDescription {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1.2em;
+    background-color: transparent;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    border: 2px solid white;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 ul,
 li {
   list-style-type: none;
@@ -522,6 +548,16 @@ li {
 //////////////// DESKTOP STYLES ////////////////
 
 @media only screen and (min-width: 768px) {
+  #AboutDescription {
+    a {
+      width: auto;
+    }
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
   .title {
     font-size: 3em;
   }

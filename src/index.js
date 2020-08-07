@@ -399,6 +399,7 @@ function loadReactComponents() {
             projectURL={data[i].projectURL}
             githubURL={data[i].githubURL}
             image={data[i].imageURL}
+            projectDate={data[i].projectDate}
           />
         );
 
