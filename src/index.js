@@ -389,7 +389,6 @@ function loadReactComponents() {
   fetch("https://personal-web-a99ce.firebaseio.com/projects.json")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       for (let i = 0; i < data.length; i++)
         cards.push(
           <ProjectCard
@@ -545,7 +544,7 @@ function sendMail() {
         },
       }
     )
-      .then((res) => console.log(res))
+      .then((res) => {})
       .catch((error) => console.error("Error:", error))
       .then((response) => console.log("Success:", response));
 
