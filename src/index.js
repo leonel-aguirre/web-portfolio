@@ -24,6 +24,15 @@ let mobileNavBarShown = false;
 let mobileWidth = window.innerWidth < 768;
 
 window.onload = () => {
+  // DEPLOY WITH TRAVIS TEST
+
+  console.log(
+    "%c DEPLOY WITH TRAVIS WORKED!",
+    "background: purple; color: white"
+  );
+
+  // DEPLOY WITH TRAVIS TEST
+
   navBarContainer = document.querySelector("#NavBarContainer");
   navBar = document.querySelector("#NavBar");
   navBarTab = document.querySelector("#NavBarTab");
