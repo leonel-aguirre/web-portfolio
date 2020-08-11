@@ -1,6 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const os = require("os");
-let ip = os.networkInterfaces()["Wi-Fi"][1]["address"];
 
 module.exports = {
   mode: "development",
@@ -11,7 +9,7 @@ module.exports = {
   output: {
     path: __dirname + "\\build",
     filename: "bundle.js",
-    publicPath: "/build/",
+    // publicPath: "/build/",
   },
   module: {
     rules: [
