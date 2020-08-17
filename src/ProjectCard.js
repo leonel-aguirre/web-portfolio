@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class ProjectCard extends React.Component {
+export default class ProjectCard extends Component {
   state = {
     buttonText: "mostrar descripción",
     color: randomColor(),
