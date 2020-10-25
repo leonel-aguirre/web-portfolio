@@ -11,6 +11,7 @@ let navBarContainer,
   navBarOffset,
   chartContainer;
 let initialNavBarHeight;
+let cVLink;
 let homeSection, aboutSection, skillsSection, portfolioSection, contactSection;
 let nameInput, emailInput, messageInput, mailFormButton;
 
@@ -29,6 +30,8 @@ window.onload = () => {
   navBarOffset = document.querySelector("#NavBarOffset");
   initialNavBarHeight = navBarContainer.clientHeight;
 
+  cVLink = document.querySelector("#CVLink");
+
   homeSection = document.querySelector("#Home");
   aboutSection = document.querySelector("#About");
   skillsSection = document.querySelector("#Skills");
@@ -44,6 +47,13 @@ window.onload = () => {
 
   modal = document.querySelector("#Modal");
   modalDisposeButton = document.querySelector("#ModalDisposeButton");
+
+  // Sets cVLink href attribute.
+  fetch("https://personal-web-a99ce.firebaseio.com/CVURL.json")
+    .then((data) => data.json())
+    .then((data) => {
+      cVLink.setAttribute("href", data);
+    });
 
   loadThreeJS(homeSection, mobileWidth);
   addListeners();

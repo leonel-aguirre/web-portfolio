@@ -23,7 +23,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -37,6 +37,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    publicPath: "/server/",
     host: "192.168.100.136",
   },
 };
