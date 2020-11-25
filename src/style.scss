@@ -581,14 +581,13 @@ li {
     }
 
     .paragraph {
-      text-align: left;
+      text-align: justify;
     }
 
     #AboutDescription {
       order: 1;
-
-      padding-right: 100px;
-      width: 75%;
+      // padding-right: 100px;
+      // width: 75%;
     }
 
     #AboutImage {
