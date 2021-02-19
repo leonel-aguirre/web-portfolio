@@ -17,7 +17,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^4.5.2",
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "sass": "^1.26.8",
