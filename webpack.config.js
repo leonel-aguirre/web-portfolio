@@ -38,6 +38,5 @@ module.exports = {
   ],
   devServer: {
     publicPath: "/server/",
-    host: "192.168.100.136",
   },
 };
