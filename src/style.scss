@@ -662,3 +662,55 @@ li {
     width: auto;
   }
 }
+
+.disclaimer {
+  background-color: #0004;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  .disclaimer-text-container {
+    width: 110%;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    padding: 24px 0;
+    background-image: linear-gradient(
+      45deg,
+      #9e922fbb 25%,
+      #3b3b3bbb 25%,
+      #3b3b3bbb 50%,
+      #9e922fbb 50%,
+      #9e922fbb 75%,
+      #3b3b3bbb 75%,
+      #3b3b3bbb 100%
+    );
+    background-size: 120px 120px;
+
+    .disclaimer-title {
+      color: $almostWhite;
+      margin: 0;
+
+      font-size: larger;
+
+      @media only screen and (min-width: 600px) {
+        font-size: xx-large;
+      }
+    }
+
+    .disclaimer-text {
+      color: $almostWhite;
+      margin: 0;
+      font-size: small;
+
+      @media only screen and (min-width: 600px) {
+        font-size: larger;
+      }
+    }
+  }
+}
