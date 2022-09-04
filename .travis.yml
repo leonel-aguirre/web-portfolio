@@ -10,7 +10,7 @@ deploy:
   provider: pages
   github_token: $github_token
   local_dir: build
-  repo: NoisyApple/NoisyApple.github.io
+  repo: leonel-aguirre/leonel-aguirre.github.io
   target-branch: master
   on:
     branch: master
