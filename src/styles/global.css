@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Anybody";
+  src: url("/static/fonts/Anybody.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anybody";
+  src: url("/static/fonts/Anybody-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-red: #f00;
+  --color-blue: #00f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Anybody", sans-serif;
+}

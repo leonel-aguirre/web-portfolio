@@ -12,6 +12,6 @@
     <pattern id="gradient" patternContentUnits="objectBoundingBox" width="1" height="1">
       <use xlink:href="#image" transform="matrix(0.000555556 0 0 0.000630274 0 -0.0672466)" />
     </pattern>
-    <image id="image" width="1800" height="1800" xlink:href="/gradientA.png" />
+    <image id="image" width="1800" height="1800" xlink:href="/static/images/gradientA.png" />
   </defs>
 </svg>
