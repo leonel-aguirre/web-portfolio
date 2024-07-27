@@ -13,8 +13,58 @@
 }
 
 :root {
-  --color-red: #f00;
-  --color-blue: #00f;
+  --color-white: #ffffff;
+  --color-white-d1: #cccccc;
+  --color-white-d2: #999999;
+  --color-white-d3: #666666;
+
+  --color-black-l3: #a1a1a1;
+  --color-black-l2: #737373;
+  --color-black-l1: #444444;
+  --color-black: #151515;
+
+  --color-magenta-l3: #ff99cf;
+  --color-magenta-l2: #ff66b8;
+  --color-magenta-l1: #ff33a0;
+  --color-magenta: #ff0088;
+  --color-magenta-d1: #cc006d;
+  --color-magenta-d2: #990052;
+  --color-magenta-d3: #660036;
+
+  --color-violet-l3: #c7c1fd;
+  --color-violet-l2: #aaa1fd;
+  --color-violet-l1: #8e82fc;
+  --color-violet: #7163fb;
+  --color-violet-d1: #5b4fc9;
+  --color-violet-d2: #443b97;
+  --color-violet-d3: #2e2864;
+
+  --color-cyan-l3: #b1f0f1;
+  --color-cyan-l2: #8be8ea;
+  --color-cyan-l1: #64e1e3;
+  --color-cyan: #3dd9dc;
+  --color-cyan-d1: #31aeb0;
+  --color-cyan-d2: #258284;
+  --color-cyan-d3: #185758;
+
+  --color-dark-blue-l3: #9f9db4;
+  --color-dark-blue-l2: #706c8e;
+  --color-dark-blue-l1: #403b69;
+  --color-dark-blue: #100a43;
+  --color-dark-blue-d1: #0d0836;
+  --color-dark-blue-d2: #0a0628;
+  --color-dark-blue-d3: #06041b;
+
+  --max-width: 1200px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
 }
 
 * {
@@ -24,4 +74,54 @@
 
 body {
   font-family: "Anybody", sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+h1 {
+  font-size: 89.76px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+h2 {
+  font-size: 67.34px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+h3 {
+  font-size: 50.52px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+h4 {
+  font-size: 37.9px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+h5 {
+  font-size: 28.43px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+h6 {
+  font-size: 21.33px;
+  font-weight: bold;
+  font-stretch: normal;
+}
+
+p {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+small {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
 }
