@@ -1,0 +1,62 @@
+---
+import PageBaseLayout from "@layouts/PageBaseLayout.astro"
+---
+
+<PageBaseLayout title="Showcase">
+  <main>
+    <header>
+      <h1>Showcase Page</h1>
+    </header>
+    <section class="font-styles">
+      <h1 class="is-label">H1</h1>
+      <h1 class="is-text">The quick brown fox</h1>
+      <h2 class="is-label">H2</h2>
+      <h2 class="is-text">The quick brown fox jumps</h2>
+      <h3 class="is-label">H3</h3>
+      <h3 class="is-text">The quick brown fox jumps over the</h3>
+      <h4 class="is-label">H4</h4>
+      <h4 class="is-text">The quick brown fox jumps over the lazy dog</h4>
+      <h5 class="is-label">H5</h5>
+      <h5 class="is-text">The quick brown fox jumps over the lazy dog</h5>
+      <h6 class="is-label">H6</h6>
+      <h6 class="is-text">The quick brown fox jumps over the lazy dog</h6>
+      <p class="is-label">Body</p>
+      <p class="is-text">The quick brown fox jumps over the lazy dog</p>
+      <small class="is-label">Body Small</small>
+      <small class="is-text">The quick brown fox jumps over the lazy dog</small>
+    </section>
+  </main>
+</PageBaseLayout>
+
+<style>
+  main {
+    max-width: var(--max-width);
+    margin: var(--space-6) auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-8);
+
+    h1 {
+      font-style: italic;
+      font-stretch: condensed;
+      font-weight: 200;
+    }
+  }
+
+  section.font-styles {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: var(--space-2);
+
+    .is-label {
+      grid-column: 1 / 3;
+    }
+
+    .is-text {
+      grid-column: 3 / 13;
+    }
+  }
+</style>
