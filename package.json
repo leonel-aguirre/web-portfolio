@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "web-portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -13,5 +13,8 @@
     "astro": "^4.12.2",
     "@astrojs/check": "^0.8.3",
     "typescript": "^5.5.4"
+  },
+  "prettier": {
+    "semi": false
   }
 }
