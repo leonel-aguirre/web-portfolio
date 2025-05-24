@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { fn } from "@storybook/test"
 
+import { ICONS } from "../Icon/Icon"
 import { CTA } from "./CTA"
 
 const meta = {
   title: "Example/CTA",
   component: CTA,
   parameters: {
+    backgrounds: {
+      default: "dark",
+    },
     layout: "centered",
   },
   tags: ["autodocs"],
@@ -18,6 +22,12 @@ const meta = {
         type: "radio",
       },
       options: Object.values(CTA.COLORS),
+    },
+    icon: {
+      control: {
+        type: "multi-select",
+      },
+      options: [undefined, ...Object.values(ICONS)],
     },
   },
 } satisfies Meta<typeof CTA>
@@ -31,6 +41,7 @@ export const SmallMagenta: Story = {
     label: "BUTTON",
     size: "small",
     color: CTA.COLORS.MAGENTA,
+    icon: "BOLT_LIGHTNING",
   },
 }
 

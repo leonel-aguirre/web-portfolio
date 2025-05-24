@@ -9,6 +9,7 @@
   transition: box-shadow 0.25s ease-in-out,
     background-position 0.25s ease-in-out;
   animation: none;
+  display: flex;
 
   &.--is-size-small {
     padding: var(--space-2) var(--space-4);
@@ -26,7 +27,7 @@
 
   &.--is-color-magenta {
     background-image: var(--gradient-magenta);
-    background-size: 200% auto;
+    background-size: 210% auto;
     background-position: 50% 0%;
 
     &:hover {
@@ -70,5 +71,9 @@
       background-position: 0 0;
       box-shadow: 0 0 100px 5px var(--color-violet-d2);
     }
+  }
+
+  .cta__icon {
+    margin-left: var(--space-2);
   }
 }
