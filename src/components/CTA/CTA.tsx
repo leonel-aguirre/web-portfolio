@@ -26,15 +26,23 @@ export interface CTAProps {
   color?: ColorValues
   /** Icon */
   icon?: IconValues | undefined
+  /** Style */
+  style?: "solid" | "outline" | "solid-gradient" | "outline-gradient"
   /** Optional click handler */
   onClick?: () => void
 }
 
 const ICON_FONT_SIZE = 14
 
-export const CTA = ({ size = "small", label, color, icon }: CTAProps) => {
+export const CTA = ({
+  size = "small",
+  style = "solid",
+  label,
+  color,
+  icon,
+}: CTAProps) => {
   const buildClassName = (): string => {
-    let className = `cta t6 --is-size-${size}`
+    let className = `cta t6 --is-size-${size} --is-style-${style}`
 
     if (color) {
       className += ` --is-color-${color}`

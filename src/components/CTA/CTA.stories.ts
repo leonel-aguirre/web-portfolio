@@ -36,51 +36,38 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const SmallMagenta: Story = {
+export const SmallSolidMagenta: Story = {
   args: {
     label: "BUTTON",
     size: "small",
     color: CTA.COLORS.MAGENTA,
-    icon: "BOLT_LIGHTNING",
+    style: "solid",
   },
 }
 
-export const SmallViolet: Story = {
-  args: {
-    label: "BUTTON",
-    size: "small",
-    color: CTA.COLORS.VIOLET,
-  },
-}
-
-export const SmallCyan: Story = {
-  args: {
-    label: "BUTTON",
-    size: "small",
-    color: CTA.COLORS.CYAN,
-  },
-}
-
-export const LargeMagenta: Story = {
-  args: {
-    label: "BUTTON",
-    size: "large",
-    color: CTA.COLORS.MAGENTA,
-  },
-}
-
-export const LargeViolet: Story = {
+export const LargeSolidViolet: Story = {
   args: {
     label: "BUTTON",
     size: "large",
     color: CTA.COLORS.VIOLET,
+    style: "solid",
   },
 }
 
-export const LargeCyan: Story = {
+export const SmallOutlineCyan: Story = {
+  args: {
+    label: "BUTTON",
+    size: "small",
+    color: CTA.COLORS.CYAN,
+    style: "outline",
+  },
+}
+
+export const LargeOutlineViolet: Story = {
   args: {
     label: "BUTTON",
     size: "large",
-    color: CTA.COLORS.CYAN,
+    color: CTA.COLORS.VIOLET,
+    style: "outline",
   },
 }
