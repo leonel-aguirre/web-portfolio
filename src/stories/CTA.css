@@ -1,0 +1,33 @@
+.cta {
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  line-height: 80%;
+  letter-spacing: 1px;
+
+  &.--is-size-small {
+    padding: var(--space-2) var(--space-4);
+    padding-top: calc(
+      var(--space-2) + var(--space-1) / 2
+    ); /* To fix gap in the font. */
+  }
+
+  &.--is-size-large {
+    padding: var(--space-3) var(--space-5);
+    padding-top: calc(
+      var(--space-3) + var(--space-1) / 2
+    ); /* To fix gap in the font. */
+  }
+
+  &.--is-color-magenta {
+    background: var(--gradient-magenta);
+  }
+
+  &.--is-color-cyan {
+    background: var(--gradient-cyan);
+  }
+
+  &.--is-color-violet {
+    background: var(--gradient-violet);
+  }
+}
