@@ -58,20 +58,26 @@
 
   /* Gradients */
   --gradient-magenta: linear-gradient(
-    90deg,
+    to right,
     var(--color-magenta-d3) 0%,
+    var(--color-magenta-d3) 25%,
+    var(--color-magenta) 75%,
     var(--color-magenta) 100%
   );
 
   --gradient-cyan: linear-gradient(
-    90deg,
+    to right,
     var(--color-cyan-d3) 0%,
+    var(--color-cyan-d3) 25%,
+    var(--color-cyan) 75%,
     var(--color-cyan) 100%
   );
 
   --gradient-violet: linear-gradient(
-    90deg,
+    to right,
     var(--color-violet-d3) 0%,
+    var(--color-violet-d3) 25%,
+    var(--color-violet) 75%,
     var(--color-violet) 100%
   );
 
