@@ -13,6 +13,7 @@
 }
 
 :root {
+  /* Colors */
   --color-white: #ffffff;
   --color-white-d1: #cccccc;
   --color-white-d2: #999999;
@@ -55,8 +56,34 @@
   --color-dark-blue-d2: #0a0628;
   --color-dark-blue-d3: #06041b;
 
+  /* Gradients */
+  --gradient-magenta: linear-gradient(
+    to right,
+    var(--color-magenta-d3) 0%,
+    var(--color-magenta-d3) 25%,
+    var(--color-magenta) 75%,
+    var(--color-magenta) 100%
+  );
+
+  --gradient-cyan: linear-gradient(
+    to right,
+    var(--color-cyan-d3) 0%,
+    var(--color-cyan-d3) 25%,
+    var(--color-cyan) 75%,
+    var(--color-cyan) 100%
+  );
+
+  --gradient-violet: linear-gradient(
+    to right,
+    var(--color-violet-d3) 0%,
+    var(--color-violet-d3) 25%,
+    var(--color-violet) 75%,
+    var(--color-violet) 100%
+  );
+
   --max-width: 1200px;
 
+  /* Spacing */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -70,12 +97,14 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Anybody", sans-serif;
 }
 
 body {
   font-family: "Anybody", sans-serif;
   background-color: var(--color-black);
   color: var(--color-white);
+  text-wrap: pretty;
 }
 
 h1 {
@@ -108,16 +137,19 @@ h5 {
   font-stretch: normal;
 }
 
-h6 {
+h6,
+.t6 {
   font-size: 21.33px;
   font-weight: bold;
   font-stretch: normal;
+  line-height: 125%;
 }
 
 p {
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
+  line-height: 125%;
 }
 
 small {
