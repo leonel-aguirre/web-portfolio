@@ -1,12 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { fn } from "@storybook/test"
 
+import { ICONS } from "../Icon/Icon"
 import { CTA } from "./CTA"
 
 const meta = {
   title: "Example/CTA",
   component: CTA,
   parameters: {
+    backgrounds: {
+      default: "dark",
+    },
     layout: "centered",
   },
   tags: ["autodocs"],
@@ -19,6 +23,12 @@ const meta = {
       },
       options: Object.values(CTA.COLORS),
     },
+    icon: {
+      control: {
+        type: "multi-select",
+      },
+      options: [undefined, ...Object.values(ICONS)],
+    },
   },
 } satisfies Meta<typeof CTA>
 
@@ -26,50 +36,38 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const SmallMagenta: Story = {
+export const SmallSolidMagenta: Story = {
   args: {
     label: "BUTTON",
     size: "small",
     color: CTA.COLORS.MAGENTA,
+    style: "solid",
   },
 }
 
-export const SmallViolet: Story = {
-  args: {
-    label: "BUTTON",
-    size: "small",
-    color: CTA.COLORS.VIOLET,
-  },
-}
-
-export const SmallCyan: Story = {
-  args: {
-    label: "BUTTON",
-    size: "small",
-    color: CTA.COLORS.CYAN,
-  },
-}
-
-export const LargeMagenta: Story = {
-  args: {
-    label: "BUTTON",
-    size: "large",
-    color: CTA.COLORS.MAGENTA,
-  },
-}
-
-export const LargeViolet: Story = {
+export const LargeSolidViolet: Story = {
   args: {
     label: "BUTTON",
     size: "large",
     color: CTA.COLORS.VIOLET,
+    style: "solid",
   },
 }
 
-export const LargeCyan: Story = {
+export const SmallOutlineCyan: Story = {
+  args: {
+    label: "BUTTON",
+    size: "small",
+    color: CTA.COLORS.CYAN,
+    style: "outline",
+  },
+}
+
+export const LargeOutlineViolet: Story = {
   args: {
     label: "BUTTON",
     size: "large",
-    color: CTA.COLORS.CYAN,
+    color: CTA.COLORS.VIOLET,
+    style: "outline",
   },
 }
